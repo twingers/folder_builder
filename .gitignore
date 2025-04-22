@@ -3,4 +3,4 @@
 folder_builder_dev.ipynb
 
 #undesired folders
-build
+build/
