@@ -1,0 +1,6 @@
+# undesired files
+*.spec
+folder_builder_dev.ipynb
+
+#undesired folders
+build
