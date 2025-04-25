@@ -24,7 +24,7 @@ def func_build_project_folder(dir: str, folder_name: str):
     # Create the parent directory and subfolders
     parent = dir + "/" + folder_name
 
-    subfolders = ("00_PM", "10_Data", "20_Engineering", "30_Drawings", "40_Invoices", '50_Change_orders', "80_Emails", "90_Photos")
+    subfolders = ("00_PM", "10_Data", "20_Engineering", "30_Drawings", "40_Invoices", '50_Change_orders', "60_Emails", "70_Photos")
 
     #check if parent exists
     if os.path.exists(parent):
@@ -42,9 +42,9 @@ def func_build_project_folder(dir: str, folder_name: str):
 
 def func_delete():
     """Create a function to delete entry widgets and its associated values that can be passed to the rest of the python program"""
-    # delete test in entries
     global path_dir, project_folder, add_date, parent_dir_bool
 
+    # delete values in entry bars
     path_entry.delete(0, tk.END)
     folder_name_entry.delete(0,tk.END)
     add_date_var.set(0)
@@ -66,12 +66,11 @@ def func_parent_dir():
 
 def func_submit():
     """This is the main function and executes when the submit button is pressed.  It checks the integrity of directory location to ensure it exists and add a set of project folders to the desired directory location"""
-    global path_dir, project_folder, add_date, parent_dir_bool
+    global path_dir, project_folder, add_date
 
     path_dir = str(path_entry.get())
     project_folder = str(folder_name_entry.get())
     add_date = int(add_date_var.get())
-    #parent_dir_bool = int(parent_dir_var.get())
 
     #clean folder names
     project_folder = project_folder.strip() #remove spaces
